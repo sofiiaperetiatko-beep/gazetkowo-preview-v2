@@ -424,7 +424,7 @@
     .inline-suggestion {
       display: none;
       min-height: 44px;
-      grid-template-columns: 22px minmax(0, 1fr);
+      grid-template-columns: 22px minmax(0, 1fr) auto;
       align-items: center;
       column-gap: 16px;
       padding: 0 12px;
@@ -455,6 +455,18 @@
       place-items: center;
       border-radius: var(--radius-pill);
       background: var(--mock-yellow-soft);
+    }
+
+    .suggestion-name {
+      min-width: 0;
+      color: var(--mock-ink);
+    }
+
+    .suggestion-category {
+      justify-self: end;
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--mock-muted);
     }
 
     .inline-stepper {
@@ -1803,6 +1815,7 @@
             <button class="inline-suggestion" id="inlineSuggestion" type="button" aria-live="polite">
               <span class="suggestion-dot" aria-hidden="true"></span>
               <span class="suggestion-name"></span>
+              <span class="suggestion-category"></span>
             </button>
             <div class="quick-pills" aria-label="Popularne produkty">
               <button class="quick-pill" type="button" data-quick-name="jajka" data-quick-category="Nabiał">+ jajka</button>
@@ -2712,6 +2725,7 @@
       inlineSuggestion.dataset.category = "";
       inlineSuggestion.querySelector(".suggestion-dot").innerHTML = "";
       inlineSuggestion.querySelector(".suggestion-name").textContent = "";
+      inlineSuggestion.querySelector(".suggestion-category").textContent = "";
     }
 
     function renderInlineSuggestion() {
@@ -2725,6 +2739,7 @@
       inlineSuggestion.dataset.category = suggestion.category;
       inlineSuggestion.querySelector(".suggestion-dot").innerHTML = getCategoryIconMarkup(suggestion.category, suggestion.name);
       inlineSuggestion.querySelector(".suggestion-name").textContent = suggestion.name;
+      inlineSuggestion.querySelector(".suggestion-category").textContent = suggestion.category;
       inlineSuggestion.classList.add("is-visible");
     }
 
