@@ -241,13 +241,17 @@
       background: var(--surface);
       border-radius: 0;
       overflow: hidden;
-      margin: 0 0 8px;
+      margin: 0;
       border-bottom: 1px solid var(--mock-line);
       box-shadow: var(--elev-flat);
       transition:
         opacity var(--motion-base) var(--ease-standard),
         height var(--motion-base) var(--ease-standard),
         margin-bottom var(--motion-base) var(--ease-standard);
+    }
+
+    .card.retailer {
+      padding: 12px 0;
     }
 
     .add-product-row {
@@ -318,7 +322,7 @@
       min-height: 42px;
       border: 1px solid var(--mock-line);
       border-radius: var(--radius-pill);
-      background: #f5f5f5;
+      background: #ffffff;
       color: var(--mock-ink);
       font-family: var(--font-body);
       font-size: 14px;
@@ -403,7 +407,7 @@
       border: 1px solid #C9CCD0;
       border-radius: var(--radius-pill);
       padding: 0 10px;
-      background: var(--surface);
+      background: transparent;
       color: var(--mock-ink);
       font-family: var(--font-body);
       font-size: 12px;
@@ -426,7 +430,7 @@
       padding: 0 12px;
       border: 1px solid var(--mock-line);
       border-radius: 12px;
-      background: var(--surface);
+      background: transparent;
       color: var(--mock-ink);
       font-family: var(--font-body);
       font-size: 14px;
@@ -807,13 +811,12 @@
     }
 
     .store-head {
-      min-height: 45px;
+      min-height: 22px;
       display: grid;
       grid-template-columns: 30px minmax(0, 1fr) 16px;
       align-items: center;
       column-gap: 0;
       padding: 0 16px;
-      border-bottom: 1px solid var(--mock-line);
       cursor: pointer;
       touch-action: manipulation;
     }
@@ -862,6 +865,7 @@
       line-height: 1;
       font-weight: 700;
       letter-spacing: -0.02em;
+      transform: translateY(1px);
     }
 
     .store-head .icon-btn {
